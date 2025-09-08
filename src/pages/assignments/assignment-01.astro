@@ -37,6 +37,7 @@ export const pageTitle = "Assignment 01";
         alt="View of the Catskill Mountains near Tannersville"
         class="hero-image"
       />
+    </section>
       <section class="section-activity" id="hike">
         <div class="section-text-panel">
           <h2>Hike</h2>
@@ -165,5 +166,77 @@ export const pageTitle = "Assignment 01";
   /* importing fonts */
   @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+  .section-hero{
+    width: 100%;
+    height: 600px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-image{
+    position: absolute;
+    top: 0px;
+    padding-top: 50px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-text-block{
+    position: relative;
+    z-index: 100;
+    width: 450px;
+    padding: 32px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+  }
+  header{
+    display: flax;
+    justfy-content: space-between;
+  }
   
+  .section-activity{
+    
+    padding-left: 0px;
+    display: flex;
+    justify-content: center;
+    /* padding-top: 50px; */
+  }
+
+  .section-text-panel{
+      background-color: #220d5c;
+      width: 800px;
+      padding-top: 100px;
+      padding-right: 200px;
+      padding-left: 100px;
+  }
+
+  .section-image{
+      width: 900px;
+  }
+
+  .section-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .explore{
+    display: flex;
+    justify-content: center;
+  }
+
+  .places-grid{
+    
+  }
+
+  .big-text{
+    font-style: italic;
+    font-size: 200%;
+    text-align: center;
+
+  }
+
 </style>
