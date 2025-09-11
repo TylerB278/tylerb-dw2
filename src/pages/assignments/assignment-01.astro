@@ -249,8 +249,8 @@ export const pageTitle = "Assignment 01";
     padding-left: 0px;
     display: flex;
     justify-content: center;
-    width: clamp(1000px, 1600px, 98%);
-    /* padding-top: 50px; */
+    width: clamp(95%, 1600px, 98%);
+    
   }
 
   .section-text-panel{
@@ -259,11 +259,16 @@ export const pageTitle = "Assignment 01";
       padding-top: 50px;
       padding-right: 70px;
       padding-left: 50px;
-      min-width: 100px;
+      min-width: 350px;
+      flex-shrink: 1;
+      
   }
 
   .section-image{
-      width: clamp(400px, 900px, 60%);
+      width: clamp(200px, 900px, 60%);
+      flex-shrink: 1;
+      object-fit: cover;
+      height: 600px;
   }
 
   .btn-cta{
