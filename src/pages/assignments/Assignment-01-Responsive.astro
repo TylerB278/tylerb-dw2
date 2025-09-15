@@ -7,12 +7,12 @@ import imgHike from "@assets/assignment-01/hike.jpg";
 import imgPaddle from "@assets/assignment-01/paddle.jpg";
 
 // This next line is used to set the page title on the site navigation and in the browser tab.
-export const pageTitle = "Assignment 01";
+export const pageTitle = "Assignment 01 Responsive Version";
 ---
 
 <Layout compact title={pageTitle}>
   <div class="page-container">
-    <header>
+    <!-- <header>
       <nav>
         <a href="/"><h2 class="nav-branding">ExploreHV</h2></a>
         <div class="nav-items">
@@ -21,7 +21,7 @@ export const pageTitle = "Assignment 01";
           <a href="#bike" class="nav-btn">Bike</a>
         </div>
       </nav>
-    </header>
+    </header> -->
     <section class="section-hero">
       <div class="hero-text-block">
         <h1>Adventure is in your backyard!</h1>
@@ -171,7 +171,7 @@ export const pageTitle = "Assignment 01";
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width:1000px;
+    /* min-width:1000px; */
   }
   
   header{
@@ -221,6 +221,7 @@ export const pageTitle = "Assignment 01";
     position: relative; */
     display: flex;
     flex-direction: column;
+    margin-top: 70px;
     /* justify-content: center;
     align-items: center; */
   }
@@ -229,21 +230,21 @@ export const pageTitle = "Assignment 01";
     /* position: absolute;
     top: 0px;
     padding-top: 50px;
-    width: 100%;
     height: 100%;
     object-fit: cover; */
+    width: 100%;
   }
 
   .hero-text-block{
     /* position: absolute; */
     z-index: 100;
-    width: 700px;
-    padding: 32px;
+    width: 800px;
+    padding: 50px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     /* height: 400px; */
-    /* background-color: rgba(255, 255, 255, 0.8); */
+    background-color: #0e0035;
     color: white;
   }
 
@@ -260,7 +261,9 @@ export const pageTitle = "Assignment 01";
     padding-left: 0px;
     display: flex;
     justify-content: center;
-    width: clamp(95%, 1600px, 98%);
+    /* width: clamp(95%, 1600px, 98%); */
+    height: 350px;
+    overflow:hidden;
     
   }
 
@@ -270,11 +273,11 @@ export const pageTitle = "Assignment 01";
 
   .section-text-panel{
       background-color: #220d5c;
-      width: 800px;
-      padding-top: 50px;
+      width: 1000px;
+      padding-top: 20px;
       padding-right: 70px;
       padding-left: 50px;
-      min-width: 350px;
+      min-width: 500px;
       max-width: 600px;
       flex-shrink: 1;
       
@@ -367,6 +370,9 @@ export const pageTitle = "Assignment 01";
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
+    
+    
   }
     .hero-image{
     position: absolute;
@@ -375,6 +381,7 @@ export const pageTitle = "Assignment 01";
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
   }
     .hero-text-block{
     position: relative;
@@ -382,8 +389,37 @@ export const pageTitle = "Assignment 01";
     width: 550px;
     padding: 32px;
     height: 400px;
-    background-color: rgba(255, 255, 255, 0.8);
-    color: black;
+    background-color: #0e0035a1;
+    color: white;
+  }
+  .section-activity{
+    
+    padding-left: 0px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    width: clamp(95%, 1600px, 98%);
+    height: 500px;
+   
+  }
+
+    .section-image{
+      width: clamp(200px, 900px, 60%);
+      flex-shrink: 1;
+      object-fit: cover;
+      height: 100%;
+  }
+
+  .section-text-panel{
+      background-color: #220d5c;
+      width: 700px;
+      padding-top: 50px;
+      padding-right: 70px;
+      padding-left: 50px;
+      min-width: 400px;
+      max-width: 600px;
+      flex-shrink: 1;
+      
   }
 
   }
