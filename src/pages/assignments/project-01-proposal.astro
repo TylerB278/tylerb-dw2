@@ -1,6 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 export const pageTitle = "Project 1 Proposal";
+import { Image } from "astro:assets";
+import Peter_Placeholder from "@assets/project-01-proposal/Peter_Placeholder.png";
 ---
 
 <Layout compact title={pageTitle}>
@@ -17,6 +19,7 @@ export const pageTitle = "Project 1 Proposal";
     another about the invited colleges and the prizes, 
     and a last section about the location and how to sign up.
   </p>
+  <Image id="Peter" src={Peter_Placeholder} alt="Peetah"/>
 </Layout>
 
 <style>
@@ -24,7 +27,7 @@ export const pageTitle = "Project 1 Proposal";
     background-color: #003e7e;
   }
   *{
-    border: 1px solid red;
+    
   }
   h1 {
     color: white;
@@ -34,7 +37,14 @@ export const pageTitle = "Project 1 Proposal";
   p{
     width: 700px;
     margin-left: 80px;
+    
   }
 
+  #Peter{
+    margin-left: 100px;
+    width: 50px;
+  }
+
+  
 
 </style>

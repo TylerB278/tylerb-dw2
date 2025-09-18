@@ -1,0 +1,91 @@
+---
+import Layout from "../../layouts/Layout.astro";
+export const pageTitle = "Project 1";
+import { Image } from "astro:assets";
+import Peter_Placeholder from "@assets/project-01-proposal/Peter_Placeholder.png";
+import Button from "@components/Button.astro";
+import Explode from "@components/Explode.astro";
+---
+
+<Layout compact title={pageTitle}>
+  <h1>Collegiate Clash</h1>
+  <h2>Event Details</h2>
+  <p>This event is a part of New Paltz Smash Club's monthly event series. Here we bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+  <p>The brackets that we will have at the event are as follows:</p>
+  <ul>
+  <Image src={Peter_Placeholder} alt="Peetah"/>
+    <li>Collegiate Crews : 12:00PM</li>
+    <li>Collegiate Crews : 12:00PM</li>
+    <li>Collegiate Crews : 12:00PM</li>
+    <li>Collegiate Crews : 12:00PM</li>
+  </ul>
+  <h2>Invited Schools</h2>
+  <p>
+    I want to make a website that advertises an upcoming esports event on campus.
+    For this event we already plan on inviting a bunch of other colleges out to compete.
+    The opportunity to have a website that will advertise the event would be a big benefit in order to increase publicity.
+    <Image src={Peter_Placeholder} alt="Peetah"/>
+  </p>
+  <h2>Where do I sign up?</h2>
+  <p>
+    I would add a nav and a footer that could take you around the page.
+    For the three sections I would do one about the event and what it is, 
+    another about the invited colleges and the prizes, 
+    and a last section about the location and how to sign up.
+  </p>
+  <Explode></Explode>
+  <div id="peter-zone">
+    <Image id="Peter" src={Peter_Placeholder} alt="Peetah"/>
+    <Button title="Peter Griffin Button" href="https://en.wikipedia.org/wiki/Peter_Griffin">
+    </Button>
+  </div>
+</Layout>
+
+<style>
+  body{
+    background-color: #003e7e;
+    width: 100%;
+  }
+
+  main{
+    
+  }
+  *{
+    
+  }
+  h1 {
+    color: white;
+    margin-left: 50px;
+  }
+
+  h2{
+    margin-left: 20px;
+  }
+
+  p, ul{
+    width: 600px;
+    padding-left: 80px;
+    padding-right: 50px;
+    
+  }
+
+  #Peter{
+    margin-left: 100px;
+    width: 50px;
+  }
+
+  button{
+    color: white;
+  }
+
+  #peter-zone{
+    width: 100%;
+    position: sticky;
+    bottom: 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    margin-top:100px;
+    
+  }
+
+</style>

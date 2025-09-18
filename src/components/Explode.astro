@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+import explosion from "@assets/project-01-proposal/explosion.gif";
+---
+
+<div class="boomcontain"><Image class="boom" src={explosion} alt="explosion"></Image></div>
+
+
+<style>
+    .boom{
+        visibility: hidden;
+    }
+    .boomcontain{
+        border: 1px solid white;
+        width:200px;
+        margin-left: 50px;
+        margin-top:50px;
+    }
+    .boomcontain:hover{
+        .boom{
+            visibility: visible;
+        }
+    }
+</style>
