@@ -1,0 +1,33 @@
+---
+import Theme from "./Theme.astro"
+const {text, title} = Astro.props;
+---
+
+<details>
+    <summary class="accordian">{title}</summary>
+    <div class="content">{text}</div>
+</details>
+
+<style>
+    details{
+        background-color: white;
+        color: #0e0035;
+        /* padding:20px; */
+        border-radius: 20px;
+        width:fit-content;
+        margin:0.5rem;
+    }
+
+    .content{
+        padding:20px;
+        
+    }
+
+    summary{
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        padding:20px;
+        background-color: #19005e;
+        color: white;
+    }
+</style>

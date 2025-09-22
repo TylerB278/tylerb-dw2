@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Button from "@components/Button.astro";
 import Frame from "@components/Frame.astro";
+import Accordian from "@components/Accordian.astro";
+import {Content as SampleContent} from "../components/markdown/samplecontent.md";
 ---
 
 <Layout title="Home" link="'/'">
@@ -10,4 +12,6 @@ import Frame from "@components/Frame.astro";
   <p>
     Tyler Boggi
   </p>
+  <SampleContent></SampleContent>
+  <Accordian title="Accordian Test" text="this is accordian text"></Accordian>
 </Layout>
