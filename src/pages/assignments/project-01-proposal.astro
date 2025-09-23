@@ -3,10 +3,12 @@ import Layout from "../../layouts/Layout.astro";
 export const pageTitle = "Project 1 Proposal";
 import { Image } from "astro:assets";
 import Peter_Placeholder from "@assets/project-01-proposal/Peter_Placeholder.png";
+import {Content as PageContent} from "src/components/markdown/project1proposal.md";
 ---
 
 <Layout compact title={pageTitle}>
-  <h1>Project 01 Proposal</h1>
+  <PageContent></PageContent>
+  <!-- <h1>Project 01 Proposal</h1>
   <p>For my project 1 topic I would like to make a page for an upcoming event.</p>
   <p>
     I want to make a website that advertises an upcoming esports event on campus.
@@ -18,7 +20,7 @@ import Peter_Placeholder from "@assets/project-01-proposal/Peter_Placeholder.png
     For the three sections I would do one about the event and what it is, 
     another about the invited colleges and the prizes, 
     and a last section about the location and how to sign up.
-  </p>
+  </p> -->
   <Image id="Peter" src={Peter_Placeholder} alt="Peetah"/>
 </Layout>
 
