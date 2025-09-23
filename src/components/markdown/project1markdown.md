@@ -9,6 +9,10 @@ What makes this event so special? We have invited several nearby schools,
 many competing in the online SUNY/ECAC leagues, to all compete offline in one large crew battle event between the schools! 
 Many of these schools will also be participating in the main event as well so attendance and competition will be at a high for this event.
 
+This event is located in the Student Union Building at SUNY New Paltz, in room SUB 62/63 in the basement of the Glass Pyramid building
+
+*show location here*
+
 The brackets that we will have at the event are as follows:
 
 - Collegiate Crews: 12:00PM
