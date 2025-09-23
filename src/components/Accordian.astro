@@ -5,7 +5,7 @@ const {text, title} = Astro.props;
 
 <details>
     <summary class="accordian">{title}</summary>
-    <div class="content">{text}</div>
+    <div class="content"></slot>{text}</div>
 </details>
 
 <style>

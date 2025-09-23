@@ -3,7 +3,9 @@ import Layout from "../../layouts/Layout.astro";
 export const pageTitle = "Project 1 Proposal";
 import { Image } from "astro:assets";
 import Peter_Placeholder from "@assets/project-01-proposal/Peter_Placeholder.png";
+import Accordian from "@components/Accordian.astro";
 import {Content as PageContent} from "src/components/markdown/project1proposal.md";
+import {Content as ProjectContent} from "src/components/markdown/project1markdown.md";
 ---
 
 <Layout compact title={pageTitle}>
@@ -21,7 +23,8 @@ import {Content as PageContent} from "src/components/markdown/project1proposal.m
     another about the invited colleges and the prizes, 
     and a last section about the location and how to sign up.
   </p> -->
-  <Image id="Peter" src={Peter_Placeholder} alt="Peetah"/>
+  <div class="separator"><p>Project 01 Markdown content:</p></div>
+  <ProjectContent></ProjectContent>
 </Layout>
 
 <style>
@@ -40,6 +43,14 @@ import {Content as PageContent} from "src/components/markdown/project1proposal.m
     width: 700px;
     margin-left: 80px;
     
+  }
+  
+  .separator{
+    background-color: #000c4e;
+    padding-top:15px;
+    height: 100px;
+    margin-top: 50px;
+    margin-bottom: 20px;
   }
 
   #Peter{
