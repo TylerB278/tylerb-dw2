@@ -1,0 +1,31 @@
+---
+const {type} = Astro.props;
+let bgColor = "white";
+let textColor = "black";
+let stroke = "black";
+
+if (type === "dark"){
+  bgColor = "darkgrey";
+  textColor = "white";
+  stroke = "white";
+}
+---
+
+<p class="button-d" style="color: ${textColor}; background-color: ${bgColor};">This is a button</p>
+
+<style>
+    .button-d{
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        margin-left: 30%;
+        top: 1rem;
+        margin-bottom: 2rem;
+        /* max-width: 300px;
+        min-width: 200px; */
+        width:fit-content;
+        /* left: 1rem; */
+    }
+
+</style>
