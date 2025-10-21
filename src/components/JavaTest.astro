@@ -5,16 +5,17 @@ let textColor = "black";
 let stroke = "black";
 
 if (type === "dark"){
-  bgColor = "darkgrey";
+  bgColor = "black";
   textColor = "white";
   stroke = "white";
 }
 ---
 
-<p class="button-d" style="color: ${textColor}; background-color: ${bgColor};">This is a button</p>
+<p class="button-d" style=`color: ${textColor}; background-color: ${bgColor};` style=``><slot/></p>
 
 <style>
     .button-d{
+        transition: scale, 0.5s;
         font-size: 16px;
         padding: 10px;
         border-radius: 10px;
@@ -22,10 +23,11 @@ if (type === "dark"){
         margin-left: 30%;
         top: 1rem;
         margin-bottom: 2rem;
-        /* max-width: 300px;
-        min-width: 200px; */
         width:fit-content;
-        /* left: 1rem; */
     }
 
+    .button-d:hover{
+        scale: 1.1;
+        transition: scale, 0.5s; 
+    }
 </style>
