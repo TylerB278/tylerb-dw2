@@ -1,8 +1,17 @@
 ---
+import Button from "./Button.astro";
+
 const {type} = Astro.props;
+const {scale} = Astro.props;
 let bgColor = "white";
 let textColor = "black";
 let stroke = "black";
+
+if (type === "light"){
+  bgColor = "white";
+  textColor = "black";
+  stroke = "black";
+}
 
 if (type === "dark"){
   bgColor = "black";
@@ -11,11 +20,22 @@ if (type === "dark"){
 }
 ---
 
-<p class="button-d" style=`color: ${textColor}; background-color: ${bgColor};` style=``><slot/></p>
+<p id="button-d" style=`--colora:${textColor}; --colorb:${bgColor}; scale: ${scale}`><slot/></p>
+
+<script>
+ const button = document.querySelector("#button-d");
+
+ const myButton = function () {
+    alert("YOU'VE BEEN CLICKED!!");
+ };
+
+ button.addEventListener("click", myButton);
+</script>
 
 <style>
-    .button-d{
-        transition: scale, 0.5s;
+    #button-d{
+        background-color: var(--colorb);
+        color: var(--colora);
         font-size: 16px;
         padding: 10px;
         border-radius: 10px;
@@ -26,8 +46,8 @@ if (type === "dark"){
         width:fit-content;
     }
 
-    .button-d:hover{
-        scale: 1.1;
-        transition: scale, 0.5s; 
+    #button-d:hover{
+        background-color: var(--colora);
+        color: var(--colorb);
     }
 </style>
