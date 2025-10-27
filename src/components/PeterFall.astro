@@ -1,0 +1,84 @@
+---
+import Button from "./Button.astro";
+
+const {type} = Astro.props;
+let bgColor = "white";
+let textColor = "black";
+let stroke = "black";
+
+if (type === "light"){
+  bgColor = "white";
+  textColor = "black";
+  stroke = "black";
+}
+
+if (type === "dark"){
+  bgColor = "black";
+  textColor = "white";
+  stroke = "white";
+}
+
+if (type === "red"){
+  bgColor = "red";
+  textColor = "white";
+}
+---
+
+<div class="contain"><p class="peter-b" style=`--colora:${textColor}; --colorb:${bgColor};`>KILL PETER GRIFFIN!</p></div>
+
+<script>
+ const button = document.querySelector(".peter-b");
+
+ const killPeter = function () {
+    const text = document.querySelector(".peter-b").textContent;
+    if(text === "KILL PETER GRIFFIN!"){
+        document.querySelector(".peter-b").textContent = "REVIVE PETER GRIFFIN!";
+    }
+    else{
+       document.querySelector(".peter-b").textContent = "KILL PETER GRIFFIN!"; 
+    }
+
+    const kill = document.querySelector("#Peter");
+    console.log("dead");
+    kill?.classList.toggle("dead");
+
+    const fall = document.querySelector("#PeterFall");
+    fall?.classList.toggle("fallen");
+    fall?.classList.toggle("notFallen");
+ };
+
+ button.addEventListener("click", killPeter);
+</script>
+
+<style>
+    .peter-b{
+        background-color: var(--colorb);
+        color: var(--colora);
+        font-size: 32px;
+        padding: 20px;
+        border-radius: 20px;
+        display: flex;
+        top: 1rem;
+        margin-bottom: 2rem;
+        user-select: none;
+        transition: all 0.3s;
+        width:fit-content;
+    }
+
+    .peter-b:hover{
+        background-color: var(--colora);
+        color: var(--colorb);
+        transition: all 0.3s;
+        padding: 30px;
+        font-size: 36px;
+        margin-top: 22px;
+        margin-bottom: 24px;
+    }
+
+    .contain{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+</style>

@@ -20,10 +20,10 @@ if (type === "dark"){
 }
 ---
 
-<p id="button-d" style=`--colora:${textColor}; --colorb:${bgColor}; scale: ${scale}`><slot/></p>
+<p class="button-d" style=`--colora:${textColor}; --colorb:${bgColor}; scale: ${scale}`><slot/></p>
 
 <script>
- const button = document.querySelector("#button-d");
+ const button = document.querySelector(".button-d");
 
  const myButton = function () {
     alert("YOU'VE BEEN CLICKED!!");
@@ -33,7 +33,7 @@ if (type === "dark"){
 </script>
 
 <style>
-    #button-d{
+    .button-d{
         background-color: var(--colorb);
         color: var(--colora);
         font-size: 16px;
@@ -46,7 +46,7 @@ if (type === "dark"){
         width:fit-content;
     }
 
-    #button-d:hover{
+    .button-d:hover{
         background-color: var(--colora);
         color: var(--colorb);
     }
