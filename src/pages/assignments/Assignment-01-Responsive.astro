@@ -8,6 +8,8 @@ import imgPaddle from "@assets/assignment-01/paddle.jpg";
 
 // This next line is used to set the page title on the site navigation and in the browser tab.
 export const pageTitle = "Assignment 01 Responsive Version";
+
+
 ---
 
 <Layout compact title={pageTitle}>
@@ -21,6 +23,8 @@ export const pageTitle = "Assignment 01 Responsive Version";
           <a href="#bike" class="nav-btn">Bike</a>
         </div>
       </nav>
+      <button id="btnDark"><img src="/ios-moon-8.png"></img></button>
+      <button id="btnLight"><img src="/sun-icon.png"></img></button>
     </header>
     <section class="section-hero">
       <div class="hero-text-block">
@@ -163,9 +167,69 @@ export const pageTitle = "Assignment 01 Responsive Version";
   </div>
 </Layout>
 
+<script>
+  const btnDark = document.querySelector("#btnDark");
+  const btnLight = document.querySelector("#btnLight");
+
+  const setDark = function(){
+    document.documentElement.style.colorScheme = "dark";
+    btnDark?.classList.toggle("hidden");
+    btnLight?.classList.toggle("hidden");
+  }
+  const setLight = function(){
+    document.documentElement.style.colorScheme = "light";
+    btnLight?.classList.toggle("hidden");
+    btnDark?.classList.toggle("hidden");
+  }
+
+  btnDark.addEventListener("click", setDark);
+  btnLight.addEventListener("click", setLight);
+  
+  //opener
+  if (window.matchMedia('prefers-color-scheme:dark').matches){
+    btnDark?.classList.toggle("hidden");
+  }
+  else{
+    btnLight?.classList.toggle("hidden");
+  }
+
+</script>
+
+<style is:global>
+  :root{
+    --theme-dark-fg: white;
+    --theme-dark-bg: #220d5c;
+    --theme-dark-accent: #0e0035;
+    --theme-dark-accent2: #125dff;
+    --theme-dark-link: #4c1fc8;
+
+    --theme-light-fg: #220d5c;
+    --theme-light-bg: #ddd1ff;
+    --theme-light-accent: #9771ff;
+    --theme-light-accent2: #3675ff;
+    --theme-light-link: #b9d1ff;
+
+    color-scheme: light dark;
+
+    --colorfg: light-dark(var(--theme-light-fg), var(--theme-dark-fg));
+    --colorbg: light-dark(var(--theme-light-bg), var(--theme-dark-bg));
+    --coloraccent: light-dark(var(--theme-light-accent), var(--theme-dark-accent));
+    --coloraccent2: light-dark(var(--theme-light-accent2), var(--theme-dark-accent2));
+    --colorlink: light-dark(var(--theme-light-link), var(--theme-dark-link));
+  }
+</style>
+
 <style>
   /* importing fonts */
   @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+  body{
+    background-color: var(--colorbg);
+  }
+
+  *{
+    color: var(--colorfg);
+  }
 
   .page-container{
     display: flex;
@@ -177,6 +241,10 @@ export const pageTitle = "Assignment 01 Responsive Version";
   header{
     align-self: stretch;
 
+  }
+
+  .hidden{
+    display: none;
   }
 
   nav{
@@ -199,14 +267,13 @@ export const pageTitle = "Assignment 01 Responsive Version";
   }
 
   .nav-btn{
-    background-color: white;
-    color: #220d5c;
+    background-color: var(--colorfg);
+    color: var(--colorbg);
     width: 80px;
     height: 60px;
     border-radius: 20px;
     padding-top: 30px;
     padding-bottom: 30px;
-    color: black;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
@@ -217,8 +284,21 @@ export const pageTitle = "Assignment 01 Responsive Version";
   }
 
   .nav-btn:hover{
-    background-color: #220d5c;
-    color: white;
+    background-color: var(--colorbg);
+    color: var(--colorfg);
+  }
+
+  #btnLight, #btnDark{
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0px solid white;
+    margin-left: 100px;
+  }
+
+  #btnLight:hover, #btnDark:hover{
+    border: 3px solid var(--colorfg);
+    border-radius: 15px;
   }
 
   .section-hero{
@@ -251,8 +331,8 @@ export const pageTitle = "Assignment 01 Responsive Version";
     flex-wrap: wrap;
     flex-direction: row;
     /* height: 400px; */
-    background-color: #0e0035;
-    color: white;
+    background-color: var(--colorbg);
+    color: var(--colorfg);
     font-size: 12px;
   }
 
@@ -276,7 +356,7 @@ export const pageTitle = "Assignment 01 Responsive Version";
   }
 
   .section-text-panel{
-      background-color: #220d5c;
+      background-color: var(--coloraccent);
       width: 100%;
       height: 250px;
       padding-top: 10px;
@@ -303,8 +383,8 @@ export const pageTitle = "Assignment 01 Responsive Version";
 
   .btn-cta{
     text-decoration: none;
-    color: #87bbff;
-    border: 2px solid #87bbff;
+    color: var(--colorlink);
+    border: 2px solid var(--colorlink);
     border-radius: 10px;
     padding: 10px;
     position: relative;
@@ -312,7 +392,7 @@ export const pageTitle = "Assignment 01 Responsive Version";
   }
 
   .btn-cta:hover{
-    background-color: #87bbff;
+    background-color: var(--colorlink);
     color: white;
   }
 
@@ -337,7 +417,7 @@ export const pageTitle = "Assignment 01 Responsive Version";
   }
 
   .places-tile{
-    background-color: #4f78ff;
+    background-color: var(--coloraccent2);
     color: white;
     padding: 20px;
     width: 200px;
@@ -348,8 +428,7 @@ export const pageTitle = "Assignment 01 Responsive Version";
   }
 
   .places-tile:hover{
-    background-color: white;
-    color: #4f78ff;
+    background-color: var(--colorbg);
   }
 
   .places-name{
@@ -389,14 +468,13 @@ export const pageTitle = "Assignment 01 Responsive Version";
   }
 
   .nav-btn{
-    background-color: white;
-    color: #220d5c;
+    background-color: var(--colorfg);
+    color: var(--colorbg);
     width: 120px;
     height: 70px;
     border-radius: 20px;
     padding-top: 30px;
     padding-bottom: 30px;
-    color: black;
     text-decoration: none;
     font-size: 25px;
     font-weight: bold;
@@ -433,8 +511,8 @@ export const pageTitle = "Assignment 01 Responsive Version";
     width: 550px;
     padding: 32px;
     height: 400px;
-    background-color: #0e0035a1;
-    color: white;
+    background-color: var(--colorbg);
+    color: var(--colorfg);
     font-size:20px;
   }
   .section-activity{
@@ -462,7 +540,7 @@ export const pageTitle = "Assignment 01 Responsive Version";
   }
 
   .section-text-panel{
-      background-color: #220d5c;
+      background-color: var(--coloraccent);
       width: 500px;
       padding-top: 50px;
       padding-right: 50px;
