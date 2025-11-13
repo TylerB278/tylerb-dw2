@@ -1,0 +1,26 @@
+---
+const { website } = Astro.props;
+
+const links = [
+    '1',
+    '2',
+]
+---
+
+<article>
+    <a href={website.link} target="_blank"><img src={website.img}></img></a>
+    <h3>{website.title}</h3>
+</article>
+
+<style>
+    article{
+        max-width: 200px;
+        height: fit-content;
+        margin: 1rem auto;
+        padding: 1rem;
+    }
+
+    img {
+        width: 100px;
+    }
+</style>
